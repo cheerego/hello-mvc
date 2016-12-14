@@ -17,3 +17,6 @@
 5. 数据库配置在App/config/database.php下
 6. 函数库在Core/Common/Functions.php(感觉Common这个单词怪怪的)
 7. Storage这个目录是一个缓存目录，记得给权限。
+
+# Last
+希望可以尽量的完善
