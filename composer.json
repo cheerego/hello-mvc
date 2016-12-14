@@ -1,0 +1,9 @@
+{
+    "require": {
+        "symfony/debug": "^3.2",
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "files": ["Core/Common/function.php"]
+    }
+}
