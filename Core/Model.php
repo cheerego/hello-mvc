@@ -10,15 +10,15 @@ class Model extends \PDO
 {
     public function __construct()
     {
-        extract(Config::all('database'));
-        $dsn = $TYPE . ':' . 'host=' . $HOST . ';' . 'dbname=' . $DBNAME . ';' . 'charset=' . $CHARSET;
-        $username = $USERNAME;
-        $passwd = $PASSWORD;
-        try {
-            parent::__construct($dsn, $username, $passwd);
-        } catch (\PDOException $exception) {
-            throw new \PDOException($exception->getMessage());
-        }
+//        extract(Config::all('database'));
+//        $dsn = $TYPE . ':' . 'host=' . $HOST . ';' . 'dbname=' . $DBNAME . ';' . 'charset=' . $CHARSET;
+//        $username = $USERNAME;
+//        $passwd = $PASSWORD;
+//        try {
+//            parent::__construct($dsn, $username, $passwd);
+//        } catch (\PDOException $exception) {
+//            throw new \PDOException($exception->getMessage());
+//        }
 
     }
 }

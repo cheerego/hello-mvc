@@ -6,11 +6,13 @@
  * Date: 16/12/13
  * Time: 下午7:48
  */
-namespace Core;
+namespace App;
+use Core\Route;
 use App\Controller\IndexController;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\DebugClassLoader;
+
 
 class Bootstrap
 {
@@ -19,20 +21,21 @@ class Bootstrap
     public static function run()
     {
         self::debug();
+        self::db();
+        self::route();
+    }
+    public static function route(){
         $route = new Route();
         $controller = $route->controller;
         $action = $route->action;
-        $controllerFile = APP . DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR . ucfirst($controller) . 'Controller.php';
+        $controllerFile = APP . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . ucfirst($controller) . 'Controller.php';
         if (file_exists($controllerFile)) {
 //            require_once $controllerFile;
             (new IndexController())->$action();
         } else {
             throw new \Exception("找不到控制器" . $controllerFile);
         }
-
-
     }
-
     public static function load($class)
     {
         if (isset($classList[$class])) {
@@ -60,6 +63,19 @@ class Bootstrap
             ini_set('display_errors', 0);
             error_reporting(0);
         }
+
+    }
+
+    public static function db()
+    {
+
+        //初始化 illuminate/database
+        $capsule = new \Illuminate\Database\Capsule\Manager;
+        $capsule->addConnection(require APP.'/Config/database.php');
+        $capsule->setAsGlobal();
+        //开启Eloquent ORM
+        $capsule->bootEloquent();
+
 
     }
 

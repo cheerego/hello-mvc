@@ -3,7 +3,8 @@
         "symfony/debug": "^3.2",
         "phpunit/phpunit": "^5.7",
         "symfony/console": "^3.2",
-        "twig/twig": "^1.29"
+        "twig/twig": "^1.29",
+        "illuminate/database": "^5.3"
     },
     "autoload": {
         "files": [
@@ -11,7 +12,9 @@
         ],
         "psr-4": {
             "Core\\": "Core/",
-            "App\\Controller\\": "App/Controllers/"
+            "App\\Controller\\": "App/Controllers/",
+            "App\\Model\\":"App/Models/",
+            "App\\":"App/"
         }
     },
     "repositories": {

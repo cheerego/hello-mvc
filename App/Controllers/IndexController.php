@@ -7,10 +7,11 @@
  */
 namespace App\Controller;
 
+use App\Model\User;
 use Core\BaseController;
 use Core\Config;
 use Core\Model;
-
+use Illuminate\Database\Capsule\Manager as Capsule;
 class IndexController extends BaseController
 {
 
@@ -20,11 +21,9 @@ class IndexController extends BaseController
 
     public function index()
     {
-//        p(Config::all('database'));
 
-//        $db = new Model();
-//        $res = $db->query('select * from users');
-//        var_dump($res->fetchAll());
+
+        p( User::find(2));
         $this->assign(['data'=>"asdasdasd",'title'=>"title"]);
         $this->display('index.twig');
 

@@ -21,5 +21,5 @@ require_once 'vendor/autoload.php';
 
 
 //启动框架
-\Core\Bootstrap::run();
+\App\Bootstrap::run();
 

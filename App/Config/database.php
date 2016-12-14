@@ -5,14 +5,14 @@
  * Date: 16/12/14
  * Time: 下午3:28
  */
-/**
- * 使用PDO
- */
+
 return [
-    'TYPE' => 'mysql',
-    'HOST' => 'localhost',
-    'DBNAME' => 'chat',
-    'USERNAME' => 'root',
-    'PASSWORD' => '',
-    'CHARSET'=>'utf8'
+    'driver'    => 'mysql',
+    'host'      => 'localhost',
+    'database'  => 'chat',
+    'username'  => 'root',
+    'password'  => '',
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
 ];
