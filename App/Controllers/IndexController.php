@@ -20,12 +20,16 @@ class IndexController extends BaseController
 
     public function index()
     {
-        p(Config::all('databaseas'));
+//        p(Config::all('database'));
 
 //        exit();
-//        $db = new Model();
-//        $res = $db->query('select * from users');
-//        var_dump($res->fetchAll());
+
+        var_dump(Config::get('USERNAME', 'database'));
+        var_dump(Config::get('USERNAME', 'database'));
+        exit();
+        $db = new Model();
+        $res = $db->query('select * from users');
+        var_dump($res->fetchAll());
         $this->assign(['data'=>"data",'title'=>"title"]);
         $this->display('index.php');
 

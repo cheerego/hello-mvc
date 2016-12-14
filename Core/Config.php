@@ -16,11 +16,24 @@ class Config
 
     /**
      * @param $name 需要获得的配置值PASSWORD
-     * @param $type 需要获得的配置类型如route database
+     * @param $type 需要获得的配置类型如route或database
      */
     public static function get($name, $type)
     {
-
+        //判断缓存是否加载了该配置
+        if (isset(self::$Conf[ $type][$name])) {
+            return self::$Conf[$type][$name];
+        }
+        //没有缓存
+        //判断是否有配置文件，有则引入 没有抛出异常
+        $file = APP . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . $type . ".php";
+        if (file_exists($file)) {
+            $config = require_once $file;
+            self::$Conf[$type] = $config;
+            return self::$Conf[$type][$name];
+        } else {
+            throw  new \Exception("没有找到该配置文件" . $file);
+        }
     }
 
     /**

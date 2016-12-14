@@ -10,14 +10,14 @@ class Model extends \PDO
 {
     public function __construct()
     {
-        $db_config = Config::all('database');
-        $dsn = 'mysql:host=localhost;dbname=chat';
-        $username = 'root';
-        $passwd = '';
+        extract(Config::all('database'));
+        $dsn = $TYPE . ':' . 'host=' . $HOST . ';' . 'dbname=' . $DBNAME . ';' . 'charset=' . $CHARSET;
+        $username = $USERNAME;
+        $passwd = $PASSWORD."1";
         try {
             parent::__construct($dsn, $username, $passwd);
         } catch (\PDOException $exception) {
-            p($exception->getMessage());
+            throw new \PDOException($exception->getMessage());
         }
 
     }

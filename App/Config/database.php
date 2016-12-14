@@ -14,5 +14,5 @@ return [
     'DBNAME' => 'chat',
     'USERNAME' => 'root',
     'PASSWORD' => '',
-    'charset'=>'utf8'
+    'CHARSET'=>'utf8'
 ];

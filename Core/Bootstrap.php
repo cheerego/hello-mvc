@@ -7,7 +7,6 @@
  * Time: 下午7:48
  */
 namespace Core;
-use Core\Route;
 use App\Controller\IndexController;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\Debug\ErrorHandler;
