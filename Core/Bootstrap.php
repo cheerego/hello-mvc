@@ -7,8 +7,8 @@
  * Time: 下午7:48
  */
 namespace Core;
-use App\Controller\IndexController;
 use Core\Route;
+use App\Controller\IndexController;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\DebugClassLoader;
@@ -24,7 +24,7 @@ class Bootstrap
         $action = $route->action;
         $controllerFile = APP . '/Controllers/' . ucfirst($controller) . 'Controller.php';
         if (is_file($controllerFile)) {
-            require_once $controllerFile;
+//            require_once $controllerFile;
             (new IndexController())->$action();
         } else {
             throw new \Exception("找不到控制器" . $controllerFile);
@@ -50,11 +50,8 @@ class Bootstrap
 
     public static function debug()
     {
-
         Debug::enable();
         ErrorHandler::register();
-
-
         DebugClassLoader::enable();
     }
 
