@@ -22,4 +22,9 @@ class BaseController{
             require_once $file;
         }
     }
+
+    public function redirect($controller_action,$data)
+    {
+
+    }
 }
