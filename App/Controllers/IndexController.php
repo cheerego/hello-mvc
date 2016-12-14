@@ -8,6 +8,7 @@
 namespace App\Controller;
 
 use Core\BaseController;
+use Core\Config;
 use Core\Model;
 
 class IndexController extends BaseController
@@ -19,7 +20,9 @@ class IndexController extends BaseController
 
     public function index()
     {
+        p(Config::all('database'));
 
+        exit();
 //        $db = new Model();
 //        $res = $db->query('select * from users');
 //        var_dump($res->fetchAll());

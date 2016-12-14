@@ -7,6 +7,9 @@
  * Time: 下午7:48
  */
 use Core\Route;
+use Symfony\Component\Debug\Debug;
+use Symfony\Component\Debug\ErrorHandler;
+use Symfony\Component\Debug\DebugClassLoader;
 
 class Bootstrap
 {
@@ -17,7 +20,7 @@ class Bootstrap
         $route = new Route();
         $controller = $route->controller;
         $action = $route->action;
-        $controllerFile = APP.'/Controllers/'.ucfirst($controller).'Controller.php';
+        $controllerFile = APP . '/Controllers/' . ucfirst($controller) . 'Controller.php';
         if (is_file($controllerFile)) {
             require_once $controllerFile;
             (new App\Controller\IndexController())->$action();
@@ -41,4 +44,17 @@ class Bootstrap
             }
         }
     }
+
+
+    public static function debug()
+    {
+
+        Debug::enable();
+        ErrorHandler::register();
+
+
+        DebugClassLoader::enable();
+    }
+
+
 }
