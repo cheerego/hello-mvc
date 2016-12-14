@@ -29,12 +29,12 @@ class Config
     public static function all($type)
     {
         //判断缓存是否加载了该配置
-        if (isset(self::$Conf[$type])) {
+        if (isset(self::$Conf[ $type])) {
             return self::$Conf[$type];
         }
         //没有缓存
         //判断是否有配置文件，有则引入 没有抛出异常
-        $file = APP . '/Config/' . $type . ".php";
+        $file = APP . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . $type . ".php";
         if (file_exists($file)) {
             $config = require_once $file;
             self::$Conf[$type] = $config;

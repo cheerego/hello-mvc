@@ -20,7 +20,7 @@ class IndexController extends BaseController
 
     public function index()
     {
-        p(Config::all('database'));
+        p(Config::all('databaseas'));
 
 //        exit();
 //        $db = new Model();

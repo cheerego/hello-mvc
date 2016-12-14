@@ -19,16 +19,19 @@ class Bootstrap
 
     public static function run()
     {
+        self::debug();
         $route = new Route();
         $controller = $route->controller;
         $action = $route->action;
-        $controllerFile = APP . '/Controllers/' . ucfirst($controller) . 'Controller.php';
-        if (is_file($controllerFile)) {
+        $controllerFile = APP . DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR . ucfirst($controller) . 'Controller.php';
+        if (file_exists($controllerFile)) {
 //            require_once $controllerFile;
             (new IndexController())->$action();
         } else {
             throw new \Exception("找不到控制器" . $controllerFile);
         }
+
+
     }
 
     public static function load($class)
@@ -37,8 +40,8 @@ class Bootstrap
             return true;
         } else {
             $class = str_replace('\\', '/', $class);
-            $file = APP_PATH . '/' . $class . '.php';
-            if (is_file($file)) {
+            $file = APP_PATH . DIRECTORY_SEPARATOR . $class . '.php';
+            if (file_exists($file)) {
                 require_once $file;
                 self::$classList[$class] = $class;
             } else {
@@ -50,9 +53,15 @@ class Bootstrap
 
     public static function debug()
     {
-        Debug::enable();
-        ErrorHandler::register();
-        DebugClassLoader::enable();
+        if (DEBUG) {
+            Debug::enable();
+            ErrorHandler::register();
+            DebugClassLoader::enable();
+        } else {
+            ini_set('display_errors', 0);
+            error_reporting(0);
+        }
+
     }
 
 

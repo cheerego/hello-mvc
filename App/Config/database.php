@@ -11,7 +11,7 @@
 return [
     'TYPE' => 'mysql',
     'HOST' => 'localhost',
-    'DBNAME' => 'char',
+    'DBNAME' => 'chat',
     'USERNAME' => 'root',
     'PASSWORD' => '',
     'charset'=>'utf8'

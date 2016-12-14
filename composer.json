@@ -1,7 +1,8 @@
 {
     "require": {
         "symfony/debug": "^3.2",
-        "phpunit/phpunit": "^5.7"
+        "phpunit/phpunit": "^5.7",
+        "symfony/console": "^3.2"
     },
     "autoload": {
         "files": [
@@ -9,7 +10,13 @@
         ],
         "psr-4": {
             "Core\\": "Core/",
-            "App\\Controller\\":"App/Controllers/"
+            "App\\Controller\\": "App/Controllers/"
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
         }
     }
 }

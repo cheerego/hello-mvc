@@ -16,8 +16,9 @@ class BaseController{
     }
 
     public function display($view){
-        $file = APP . '/Views/' . $view;
-        if (is_file($file)) {
+        $file = APP . DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR . $view;
+        if (file_exists($file)) {
+            //TODO
             extract($this->assign);
             require_once $file;
         }
