@@ -6,6 +6,8 @@
  * Date: 16/12/13
  * Time: 下午7:48
  */
+namespace Core;
+use App\Controller\IndexController;
 use Core\Route;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\Debug\ErrorHandler;
@@ -23,9 +25,9 @@ class Bootstrap
         $controllerFile = APP . '/Controllers/' . ucfirst($controller) . 'Controller.php';
         if (is_file($controllerFile)) {
             require_once $controllerFile;
-            (new App\Controller\IndexController())->$action();
+            (new IndexController())->$action();
         } else {
-            throw new Exception("找不到控制器" . $controllerFile);
+            throw new \Exception("找不到控制器" . $controllerFile);
         }
     }
 
