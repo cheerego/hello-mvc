@@ -22,16 +22,11 @@ class IndexController extends BaseController
     {
 //        p(Config::all('database'));
 
-//        exit();
-
-        var_dump(Config::get('USERNAME', 'database'));
-        var_dump(Config::get('USERNAME', 'database'));
-        exit();
-        $db = new Model();
-        $res = $db->query('select * from users');
-        var_dump($res->fetchAll());
-        $this->assign(['data'=>"data",'title'=>"title"]);
-        $this->display('index.php');
+//        $db = new Model();
+//        $res = $db->query('select * from users');
+//        var_dump($res->fetchAll());
+        $this->assign(['data'=>"asdasdasd",'title'=>"title"]);
+        $this->display('index.twig');
 
     }
 }

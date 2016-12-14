@@ -13,7 +13,7 @@ class Model extends \PDO
         extract(Config::all('database'));
         $dsn = $TYPE . ':' . 'host=' . $HOST . ';' . 'dbname=' . $DBNAME . ';' . 'charset=' . $CHARSET;
         $username = $USERNAME;
-        $passwd = $PASSWORD."1";
+        $passwd = $PASSWORD;
         try {
             parent::__construct($dsn, $username, $passwd);
         } catch (\PDOException $exception) {
