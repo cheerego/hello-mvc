@@ -1,5 +1,5 @@
-# PHP MVC Framwork
-## 以Learn by doing的 方式去编写一个MVC框架
+# PHP MVC Framwork ╮(￣▽￣)╭
+## Learn by doing写一个MVC框架(为了装B😂😂😂)
 
 # Introduce
 ## technology stack:
