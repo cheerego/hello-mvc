@@ -5,7 +5,7 @@
 ## technology stack:
  - twig/twig 模板引擎
  - symfony/debug  error handler
- - illuminate/database Laravel Orm | Active Recored
+ - illuminate/database Laravel's Orm | Active Recored 什么不会用，快去laravel官网查
  - symfony/console  还没用准备用
  - spl_autoload_register
 
