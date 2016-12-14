@@ -22,7 +22,7 @@ class IndexController extends BaseController
     {
         p(Config::all('database'));
 
-        exit();
+//        exit();
 //        $db = new Model();
 //        $res = $db->query('select * from users');
 //        var_dump($res->fetchAll());
