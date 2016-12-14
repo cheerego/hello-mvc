@@ -68,15 +68,12 @@ class Bootstrap
 
     public static function db()
     {
-
         //初始化 illuminate/database
         $capsule = new \Illuminate\Database\Capsule\Manager;
         $capsule->addConnection(require APP.'/Config/database.php');
         $capsule->setAsGlobal();
         //开启Eloquent ORM
         $capsule->bootEloquent();
-
-
     }
 
 

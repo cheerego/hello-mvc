@@ -8,7 +8,7 @@
     },
     "autoload": {
         "files": [
-            "Core/Common/function.php"
+            "Core/Common/Functions.php"
         ],
         "psr-4": {
             "Core\\": "Core/",
