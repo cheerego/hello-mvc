@@ -7,6 +7,7 @@
  * Time: 下午7:48
  */
 namespace App;
+use Core\Config;
 use Core\Route;
 use App\Controller\IndexController;
 use Symfony\Component\Debug\Debug;
@@ -71,7 +72,7 @@ class Bootstrap
     {
         //初始化 illuminate/database
         $capsule = new \Illuminate\Database\Capsule\Manager;
-        $capsule->addConnection(require APP.'/Config/database.php');
+        $capsule->addConnection(Config::all('database'));
         $capsule->setAsGlobal();
         //开启Eloquent ORM
         $capsule->bootEloquent();
