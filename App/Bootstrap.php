@@ -21,6 +21,7 @@ class Bootstrap
     public static function run()
     {
         self::debug();
+        self::session();
         self::db();
         self::route();
     }
@@ -76,5 +77,10 @@ class Bootstrap
         $capsule->bootEloquent();
     }
 
+    public static function session(){
+        if(!isset($_SESSION)){
+            session_start();
+        }
+    }
 
 }

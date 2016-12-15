@@ -21,10 +21,9 @@ class IndexController extends BaseController
 
     public function index()
     {
-
-
+        $_SESSION["asda"] = "asd";
         p( User::find(2));
-        $this->assign(['data'=>"asdasdasd",'title'=>"title"]);
+        $this->assign(['data'=>$_SESSION['asda'],'title'=>"title"]);
         $this->display('index.twig');
 
     }
