@@ -11,7 +11,7 @@ $capsule = new \Illuminate\Database\Capsule\Manager;
 $capsule->addConnection(require_once '../App/Config/database.php');
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
-Capsule::schema()->create('hes', function( $table)
+Capsule::schema()->create('users', function( $table)
 {
     $table->increments('id');
     $table->string('email')->unique();

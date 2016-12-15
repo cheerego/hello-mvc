@@ -8,6 +8,7 @@
  - illuminate/database Laravel's Orm | Active Recored 什么不会用，快去laravel官网查
  - symfony/console  还没用准备用
  - spl_autoload_register
+ - route是自己写的
 
 # Configuration
 1. composer require
@@ -17,6 +18,8 @@
 5. 数据库配置在App/config/database.php下
 6. 函数库在Core/Common/Functions.php(感觉Common这个单词怪怪的)
 7. Storage这个目录是一个缓存目录，记得给权限。
-
+# Write
+因为使用laravel的ORM，编写了一个数据库模板在Database目录下
+`php Database/Users.php`就可以生成表到数据库中了。
 # Last
-希望可以尽量的their
+希望可以尽量的完善
