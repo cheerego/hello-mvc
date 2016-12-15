@@ -9,6 +9,7 @@
  - symfony/console  还没用准备用
  - spl_autoload_register
  - route是自己写的
+ - 公共函数库Common/Funtions.php
 
 # Configuration
 1. composer require
